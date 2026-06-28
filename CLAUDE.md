@@ -24,7 +24,7 @@ Kullanıcı rehberi uygulaması:
 ## Durum
 
 - İskelet (scaffold) commit edildi (`0577403`), ardından ESLint/config güncellemeleri (`be03f41`).
-- `src/App.jsx`: `useState` + `useEffect` ile `API_URL`'den kullanıcılar çekiliyor, `users` state'inde tutuluyor. `users.map()` ile her kullanıcı için bir `UserCard` render ediliyor (`key`/`user` prop'u geçiliyor).
-- `src/components/UserCard.jsx`: `user` prop'unu alıyor, `user.name` ve `user.email` gösteriyor.
+- `src/App.jsx`: `useState` + `useEffect` ile `API_URL`'den kullanıcılar çekiliyor, `users` state'inde tutuluyor. `users.map()` ile her kullanıcı için bir `UserCard` render ediliyor (`key`/`user` prop'u geçiliyor). Başlık "Kullanıcı Rehberi".
+- `src/components/UserCard.jsx`: `user` prop'unu alıyor; isim baş harfinden avatar, `name`, `username`, `email`, `address.city`, `company.name`, `phone` gösteriyor.
 - `src/App.css` şu an boş.
 - Arama kutusu ve kullanıcı sayısı henüz yok — sıradaki adım bu.

@@ -22,7 +22,7 @@ console.log(users); // state'in her render'daki anlık değerini görmek için (
 
   return (
 <>
-<h1>User Cards</h1>
+<h1>Kullanıcı Rehberi</h1>
 {users.map(user => (
   // user: users dizisindeki TEK BİR ELEMAN (geçici isim, sadece bu .map() içinde geçerli, UserCard tarafı bunu görmez)
   // key: React'in listedeki her elemanı ayırt etmek için kullandığı ÖZEL prop, UserCard'a normal prop olarak gitmez
