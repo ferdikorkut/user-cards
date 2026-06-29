@@ -54,19 +54,21 @@ body {
 
 /* ===== Kart grid'i ===== */
 .user-grid {
-    display: grid;
-    /* Sabit 308px: minmax(260px, 1fr) kullanılsaydı, sütun sayısı azaldığında
-       (3'ten 2'ye düştüğünde) kalan boş alan kartlara paylaştırılıp kartlar
-       büyürdü. Sabit değer, sütun sayısı değişse de kart genişliğinin asla
-       değişmemesini sağlıyor. 308px, eski esnek halin 3 sütunluk genişliğiyle
-       birebir eşleşsin diye seçildi (bkz. hesap: (1000 - 2*20 - 2*18) / 3). */
-    grid-template-columns: repeat(auto-fill, 308px);
-    justify-content: center; /* satırda kalan boş alanı ortalar, kartları sola yapıştırmaz */
+    /* Grid değil flex kullanılıyor: Grid'de sütun yapısı tüm satırlar arasında
+       paylaşılır, bu yüzden son satırda tek/eksik kart kalırsa o kart hep
+       1. sütuna (sola) yerleşir, ortalanmaz. Flexbox'ta justify-content her
+       satırı (line'ı) kendi içinde, diğer satırlardan bağımsız hizalar -
+       bu sayede son satırdaki eksik kartlar da ortalanmış görünür. */
+    display: flex;
+    flex-wrap: wrap; /* sığmayan kartlar alt satıra geçsin */
+    justify-content: center; /* her satır kendi içinde ortalanır */
     gap: 18px;
 }
 
 /* ===== Kullanıcı kartı ===== */
 .user-card {
+    width: 308px; /* grid'in sütun genişliği kalktığı için kart genişliğini burada sabitliyoruz */
+    flex-shrink: 0; /* satırda yer azaldığında kart küçülmesin */
     background-color: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 14px;

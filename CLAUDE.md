@@ -27,5 +27,5 @@ Kullanıcı rehberi uygulaması:
 - İskelet (scaffold) commit edildi (`0577403`), ardından ESLint/config güncellemeleri (`be03f41`).
 - `src/App.jsx`: `useState` ile `users`/`search`/`loading` state'leri; `useEffect` içinde `API_URL`'den fetch + `.finally()` ile `loading` kapatılıyor. `loading` true iken erken `return` ile sadece "Yükleniyor..." gösteriliyor. Sonrasında arama kutusu (`search-bar`), kullanıcı sayısı (`app__count`), boş sonuç mesajı (`durum`) ve `user-grid` içinde `UserCard` listesi render ediliyor.
 - `src/components/UserCard.jsx`: `user` prop'unu alıyor; avatar, `name`, `username` ve `user-card__info` listesinde (`email`, `address.city`, `company.name`, `phone`) gösteriyor.
-- `src/App.css`: genel reset, `.app`/`.app__header` düzeni, `.search-bar`, sabit 308px genişlikli `.user-grid` (responsive ama büyümeyen kartlar), `.user-card` ve alt class'ları, `.durum` ve `.loading-text` (başlıkla aynı boyut/kalınlık, gri renk).
+- `src/App.css`: genel reset, `.app`/`.app__header` düzeni, `.search-bar`, `.user-grid` (flexbox + `flex-wrap`, sabit 308px genişlikli `.user-card`'lar; son satırdaki eksik kartlar da `justify-content: center` ile satır bazında ortalanıyor), `.durum` ve `.loading-text` (başlıkla aynı boyut/kalınlık, gri renk).
 - Kalan: arama/sayım/loading/kart tasarımı tamamlandı; ileride ek özellik istenirse buradan devam edilecek.
